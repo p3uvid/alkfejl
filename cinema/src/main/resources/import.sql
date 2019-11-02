@@ -1,0 +1,2 @@
+--INSERT INTO movie (title, premier, playtime, description, genre, actors, director, age_limit) 
+--    VALUES ('Test movie', '2019.11.02.', 90, 'This is very goof movie', 'sci-fi', 'Everybody', 'Domcsi', 16);
