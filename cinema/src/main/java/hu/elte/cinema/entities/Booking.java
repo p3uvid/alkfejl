@@ -7,6 +7,7 @@ package hu.elte.cinema.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -30,7 +31,7 @@ import lombok.NoArgsConstructor;
 public class Booking extends BaseEntity {
     //előadás_id
     @JoinColumn(updatable = false)
-    @ManyToOne(targetEntity = Screening.class) //egy előadásra több jegyet is lehet foglalni
+    @ManyToOne(targetEntity = Screening.class, cascade = CascadeType.ALL) //egy előadásra több jegyet is lehet foglalni
     private Screening screening;
     
     @Column(nullable = false)
