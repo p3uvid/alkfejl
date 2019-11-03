@@ -31,7 +31,7 @@ import lombok.NoArgsConstructor;
 public class Booking extends BaseEntity {
     //előadás_id
     @JoinColumn(updatable = false)
-    @ManyToOne(targetEntity = Screening.class, cascade = CascadeType.ALL) //egy előadásra több jegyet is lehet foglalni
+    @ManyToOne(targetEntity = Screening.class) //egy előadásra több jegyet is lehet foglalni
     private Screening screening;
     
     @Column(nullable = false)

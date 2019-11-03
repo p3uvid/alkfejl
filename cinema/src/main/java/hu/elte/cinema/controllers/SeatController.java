@@ -37,7 +37,7 @@ public class SeatController {
         return ResponseEntity.ok(seat.get());
     }
     
-    @PutMapping("/{id}")
+    @PutMapping("/{id}") //status módosítására oké + null-ra állítható a booking
     public ResponseEntity<Seat> update(@PathVariable Long id, @RequestBody Seat seat) {
         Optional<Seat> oseat = seatRepository.findById(id);
         if (oseat.isPresent()) {

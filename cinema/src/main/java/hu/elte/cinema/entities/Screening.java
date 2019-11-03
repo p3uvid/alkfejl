@@ -32,14 +32,14 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode
 public class Screening extends BaseEntity {
     @JoinColumn(updatable = false)
-    @ManyToOne(targetEntity = Movie.class, cascade = CascadeType.ALL) //egy filmhez tobb eloadas is tartozhat (eloadas a many, film a one?)
+    @ManyToOne(targetEntity = Movie.class) //egy filmhez tobb eloadas is tartozhat (eloadas a many, film a one?)
     private Movie movie;
     
-    @Column(updatable = false, nullable = false)
+    @Column(nullable = false)
     private LocalDateTime screening_time;
     
-    @JoinColumn(updatable = false)
-    @ManyToOne(targetEntity = Room.class, cascade = CascadeType.ALL) //több előadás lehet ugyanabban a teremben
+    @JoinColumn()
+    @ManyToOne(targetEntity = Room.class) //több előadás lehet ugyanabban a teremben
     private Room room;
     
     @JsonIgnore
