@@ -38,7 +38,7 @@ public class Seat extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private Status status;
     
-    @JoinColumn(updatable = false)
+    @JoinColumn()
     @ManyToOne(targetEntity = Booking.class) //egy foglaláshoz több szék is tartozhat
     private Booking booking;
 }

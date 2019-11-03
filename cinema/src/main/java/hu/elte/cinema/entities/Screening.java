@@ -8,6 +8,7 @@ package hu.elte.cinema.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.time.LocalDateTime;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -34,10 +35,10 @@ public class Screening extends BaseEntity {
     @ManyToOne(targetEntity = Movie.class) //egy filmhez tobb eloadas is tartozhat (eloadas a many, film a one?)
     private Movie movie;
     
-    @Column(updatable = false, nullable = false)
+    @Column(nullable = false)
     private LocalDateTime screening_time;
     
-    @JoinColumn(updatable = false)
+    @JoinColumn()
     @ManyToOne(targetEntity = Room.class) //több előadás lehet ugyanabban a teremben
     private Room room;
     
