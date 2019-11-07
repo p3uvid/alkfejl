@@ -53,6 +53,21 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
             .csrf().disable()
             .authorizeRequests()
+                .antMatchers(HttpMethod.GET, "/booking/**").authenticated()  // important!
+                .and()
+            .httpBasic()
+                .and()
+            .headers()      // important!
+                .frameOptions().disable()
+                .and()
+            .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        
+        http
+            .cors()
+                .and()
+            .csrf().disable()
+            .authorizeRequests()
                 .antMatchers("/h2/**").permitAll()   // important!
                 .and()
             .httpBasic()
