@@ -56,4 +56,4 @@ GET/screening -> összes előadás listázása
 GET / screening /{id} -> előadás lekérése id alapján  
 POST /screening -> új előadás hozzáadása  
 PUT /screening/{id} -> előadás módosítása  
-DELETE /booking/{id} -> előadás törlése  
+DELETE /screening/{id} -> előadás törlése  
