@@ -51,9 +51,6 @@ public class BookingController {
     @Autowired
     private RoomRepository roomRepository;
     
-    @Autowired
-    private SeatRepository seatRepository;
-    
     @GetMapping("") //összes foglalás listázás
     public ResponseEntity<Iterable<Booking>> getAll(){
         return new ResponseEntity(bookingRepository.findAll(), HttpStatus.OK);
@@ -90,11 +87,6 @@ public class BookingController {
         } 
         return ResponseEntity.ok(booking.get().getSeats());
     }
-    
-    /* @PostMapping("") //új jegyfoglalás hozzáadása
-    public ResponseEntity<Booking> post(@RequestBody Booking booking) {        
-        return ResponseEntity.ok(bookingRepository.save(booking));
-    } */
     
     @PostMapping("") //új jegyfoglalás hozzáadása -> ezzel már nem hozza létre mindig újra a filmet és a termet
     @ResponseBody
