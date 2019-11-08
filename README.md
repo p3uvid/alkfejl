@@ -59,5 +59,7 @@ PUT /screening/{id} -> előadás módosítása
 DELETE /screening/{id} -> előadás törlése  
 
 # Adatbázis-terv: táblák kapcsolati UML diagramja
-![alt text](https://github.com/p3uvid/alkfejl/blob/master/uml.png)  
+![alt text](https://github.com/p3uvid/alkfejl/blob/master/uml.png)
+
+# Alkalmazott könyvtárstruktúra
 ![alt text](https://github.com/p3uvid/alkfejl/blob/master/structure.png)  
