@@ -63,3 +63,7 @@ DELETE /screening/{id} -> előadás törlése
 
 # Alkalmazott könyvtárstruktúra
 ![alt text](https://github.com/p3uvid/alkfejl/blob/master/structure.png)  
+
+# Szekvenciadiagram:  
+Az alkalmazott bejelentkezés után képes az összes előadás listázására, illetve új előadás hozzáadására is:    
+![alt text](https://github.com/p3uvid/alkfejl/blob/master/sequence.PNG) 
