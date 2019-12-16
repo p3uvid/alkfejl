@@ -31,7 +31,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode
 public class Screening extends BaseEntity {
-    @JoinColumn(updatable = false)
+    @JoinColumn()
     @ManyToOne(targetEntity = Movie.class) //egy filmhez tobb eloadas is tartozhat (eloadas a many, film a one?)
     private Movie movie;
     
