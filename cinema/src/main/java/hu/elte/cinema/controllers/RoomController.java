@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author p3uvid
  */
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("room")
 public class RoomController {

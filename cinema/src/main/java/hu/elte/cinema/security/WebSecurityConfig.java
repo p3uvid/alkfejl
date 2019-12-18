@@ -18,6 +18,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 //import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 /**
  *
@@ -53,7 +54,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
             .csrf().disable()
             .authorizeRequests()
-                .antMatchers(HttpMethod.GET, "/booking/**").authenticated()  // important!
+                .antMatchers(HttpMethod.PUT, "/seat/**").permitAll()   // important!
                 .and()
             .httpBasic()
                 .and()
@@ -62,6 +63,21 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
             .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        
+        /*http
+            .cors()
+                .and()
+            .csrf().disable()
+            .authorizeRequests()
+                .antMatchers(HttpMethod.GET, "/booking/**").authenticated()  // important!
+                .and()
+            .httpBasic()
+                .and()
+            .headers()      // important!
+                .frameOptions().disable()
+                .and()
+            .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);*/
         
         http
             .cors()

@@ -1,0 +1,10 @@
+<mat-nav-list>
+    <a *ngFor="let screening of screenings" mat-list-item
+      [routerLink]="['/booking', screening.id]"
+    >
+      <h3 matLine>{{ screening.id }}</h3>
+      <p matLine>{{ screening.movie.title }}</p>
+      <p matLine>{{ screening.screening_time }}</p>
+      <p matLine>{{ screening.room.name }}</p>
+    </a>
+</mat-nav-list>

@@ -1,0 +1,11 @@
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-label {
+    color: black;
+}
+
+::ng-deep .mat-flat-button.mat-primary[disabled], .mat-flat-button[disabled][disabled]{
+    background-color: #c2185b;
+}
+
+::ng-deep .mat-form-field {
+    width: 250px;
+}
