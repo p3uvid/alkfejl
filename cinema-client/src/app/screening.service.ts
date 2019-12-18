@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Screening } from './screening';
+import { httpOptions } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,14 +16,14 @@ export class ScreeningService {
   getScreenings(): Promise<Screening[]> {
     return this.http.get<Screening[]>(
       this.screeningUrl,
-      //httpOptions
+      httpOptions
     ).toPromise();
   }
 
   getScreening(id: number): Promise<Screening> {
     return this.http.get<Screening>(
       `${this.screeningUrl}/${id}`,
-      //httpOptions
+      httpOptions
     ).toPromise();
   }
 
@@ -30,7 +31,7 @@ export class ScreeningService {
     return this.http.post<Screening>(
       this.screeningUrl,
       screening,
-      //httpOptions
+      httpOptions
     ).toPromise();
   }
 
@@ -38,14 +39,14 @@ export class ScreeningService {
     return this.http.put<Screening>(
       `${this.screeningUrl}/${id}`,
       screening,
-      //httpOptions
+      httpOptions
     ).toPromise();
   }
 
   deleteScreening(id: number): Promise<Screening> {
     return this.http.delete<Screening>(
       `${this.screeningUrl}/${id}`,
-      //httpOptions
+      httpOptions
     ).toPromise();
   }
 }

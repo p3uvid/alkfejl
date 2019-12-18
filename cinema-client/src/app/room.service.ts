@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Room } from './room';
 import { Seat } from './seat';
+import { httpOptions } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,20 +17,21 @@ export class RoomService {
   getRooms(): Promise<Room[]> {
     return this.http.get<Room[]>(
       this.roomUrl,
-      //httpOptions
+      httpOptions
     ).toPromise();
   }
 
   getRoom(id: number): Promise<Room> {
     return this.http.get<Room>(
       `${this.roomUrl}/${id}`,
-      //httpOptions
+      httpOptions
     ).toPromise();
   }
 
   getSeats(id: number): Promise<Seat[]> {
     return this.http.get<Seat[]>(
-      `${this.roomUrl}/${id}/seats`
+      `${this.roomUrl}/${id}/seats`,
+      httpOptions
     ).toPromise();
   }
 }

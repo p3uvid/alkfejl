@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-//import { httpOptions } from "./auth.service";
+import { httpOptions } from "./auth.service";
 
 import { Movie } from './movie';
 import { Screening } from './screening';
@@ -20,35 +20,35 @@ export class BookingService {
   getBookings(): Promise<Booking[]> {
     return this.http.get<Booking[]>(
       this.bookingUrl,
-      //httpOptions
+      httpOptions
     ).toPromise();
   }
 
   getBookingById(id: number): Promise<Booking> {
     return this.http.get<Booking>(
       `${this.bookingUrl}/id/${id}`,
-      //httpOptions
+      httpOptions
     ).toPromise();
   }
 
   getBookingByName(name: string): Promise<Booking> {
     return this.http.get<Booking>(
       `${this.bookingUrl}/name/${name}`,
-      //httpOptions
+      httpOptions
     ).toPromise();
   }
 
   getSeatsOfBookingById(id: number): Promise<Seat[]> {
     return this.http.get<Seat[]>(
       `${this.bookingUrl}/id/${id}/seats`,
-      //httpOptions
+      httpOptions
     ).toPromise();
   }
 
   getSeatsOfBookingByName(name: string): Promise<Seat[]> {
     return this.http.get<Seat[]>(
       `${this.bookingUrl}/name/${name}/seats`,
-      //httpOptions
+      httpOptions
     ).toPromise();
   }
 
@@ -56,14 +56,14 @@ export class BookingService {
     return this.http.post<Booking>(
       this.bookingUrl,
       booking,
-      //httpOptions
+      httpOptions
     ).toPromise();
   }
 
   deleteBooking(id: number): Promise<Booking> {
     return this.http.delete<Booking>(
       `${this.bookingUrl}/${id}`,
-      //httpOptions
+      httpOptions
     ).toPromise();
   }
 }

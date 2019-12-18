@@ -31,6 +31,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { BookingPrivateComponent } from './booking-private/booking-private.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { BookingPrivateComponent } from './booking-private/booking-private.compo
     MovieEditComponent,
     BookingComponent,
     SuccessComponent,
-    BookingPrivateComponent
+    BookingPrivateComponent,
+    LoginComponent
   ],
   imports: [
     NgbModule,

@@ -10,6 +10,8 @@ import { ScreeningComponent } from '../screening/screening.component';
 import { BookingComponent } from '../booking/booking.component';
 import { SuccessComponent } from '../success/success.component';
 import { BookingPrivateComponent } from '../booking-private/booking-private.component';
+import { AuthGuard } from '../auth.guard';
+import { LoginComponent } from '../login/login.component';
 
 const routes: Routes = [
   {
@@ -22,7 +24,8 @@ const routes: Routes = [
   },
   {
     path: 'movies/add',
-    component: MovieEditComponent
+    component: MovieEditComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'movies/:id',
@@ -31,9 +34,7 @@ const routes: Routes = [
   {
     path: 'movies/:id/edit',
     component: MovieEditComponent,
-    data: {
-      roles: ['ROLE_ADMIN']
-    }
+    canActivate: [AuthGuard]
   },
   {
     path: 'screenings/:id', //vetítések listája az ilyen id-jú filmre
@@ -45,7 +46,8 @@ const routes: Routes = [
   },
   {
     path: 'booking/private',
-    component: BookingPrivateComponent
+    component: BookingPrivateComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'booking/:id', //helyfoglalás az ilyen id-jú vetítésre
@@ -58,6 +60,10 @@ const routes: Routes = [
   {
     path: 'success',
     component: SuccessComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   }
 ];
 

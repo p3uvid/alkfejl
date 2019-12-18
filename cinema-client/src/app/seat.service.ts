@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Seat } from './seat';
+import { httpOptions } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class SeatService {
   getSeat(id: number): Promise<Seat> {
     return this.http.get<Seat>(
       `${this.seatUrl}/${id}`,
-      //httpOptions
+      httpOptions
     ).toPromise();
   }
 
@@ -23,7 +24,7 @@ export class SeatService {
     return this.http.put<Seat>(
       `${this.seatUrl}/${id}`,
       seat,
-      //httpOptions
+      httpOptions
     ).toPromise();
   }
 }

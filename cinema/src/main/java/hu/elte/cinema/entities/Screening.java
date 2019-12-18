@@ -36,7 +36,7 @@ public class Screening extends BaseEntity {
     private Movie movie;
     
     @Column(nullable = false)
-    private LocalDateTime screening_time;
+    private String screening_time;
     
     @JoinColumn()
     @ManyToOne(targetEntity = Room.class) //több előadás lehet ugyanabban a teremben
