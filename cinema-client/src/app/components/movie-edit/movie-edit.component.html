@@ -1,0 +1,72 @@
+<div class="container">
+    <h1>{{ pageTitle }}</h1>
+    <br>
+    <form [formGroup]="movieForm" (ngSubmit)="onSubmit(movieForm.value)">
+    <mat-form-field>
+        <input matInput placeholder="Cím" formControlName="title" required>
+        <mat-error *ngIf="title.invalid && (title.dirty || title.touched) && title.errors.required">
+            Cím megadása kötelező!
+        </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <textarea matInput placeholder="Leírás" formControlName="description" required></textarea>
+        <mat-error *ngIf="description.invalid && (description.dirty || description.touched) && description.errors.required">
+            Leírás megadása kötelező!
+        </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Rendező" formControlName="director" required>
+        <mat-error *ngIf="director.invalid && (director.dirty || director.touched) && director.errors.required">
+            Rendező megadása kötelező!
+        </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Szereplők" formControlName="actors" required>
+        <mat-error *ngIf="actors.invalid && (actors.dirty || actors.touched) && actors.errors.required">
+            Szereplők megadása kötelező!
+        </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Műfaj" formControlName="genre" required>
+        <mat-error *ngIf="genre.invalid && (genre.dirty || genre.touched) && genre.errors.required">
+            Műfaj megadása kötelező!
+        </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Korhatár" formControlName="age_limit" required pattern="[+0-9]*">
+        <mat-error *ngIf="age_limit.invalid && (age_limit.dirty || age_limit.touched) && age_limit.errors.required">
+            Korhatár megadása kötelező!
+        </mat-error>
+        <mat-error *ngIf="age_limit.invalid && (age_limit.dirty || age_limit.touched) && age_limit.errors.pattern">
+            Korhatár csak számokat tartalmazhat!
+        </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Film hossza (perc)" formControlName="playtime" required pattern="[+0-9]*">
+        <mat-error *ngIf="playtime.invalid && (playtime.dirty || playtime.touched) && playtime.errors.required">
+            Film hosszának megadása kötelező!
+        </mat-error>
+        <mat-error *ngIf="playtime.invalid && (playtime.dirty || playtime.touched) && playtime.errors.pattern">
+            Film hossza csak számokat tartalmazhat!
+        </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Premier (Év-Hónap-Nap formában)" formControlName="premier" required>
+        <mat-error *ngIf="premier.invalid && (premier.dirty || premier.touched) && premier.errors.required">
+            Premier megadása kötelező!
+        </mat-error>
+    </mat-form-field>
+    <br>
+
+    <button mat-flat-button color="primary" 
+        type="submit" [disabled]="movieForm.invalid"
+    >Mentés</button>
+    </form>
+</div>

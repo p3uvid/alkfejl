@@ -1,0 +1,39 @@
+<div class="container">
+    <h1>Foglalás lekérdezése</h1>
+    <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+        <input matInput placeholder="Név" formControlName="name">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Jegyfoglalás sorszáma (id)" formControlName="id">
+    </mat-form-field>
+
+    <br>
+    <button mat-flat-button color="primary"
+        type="submit"
+    >Foglalás lekérdezése</button>
+
+    <br><br>
+    <mat-error style="font-size: small;">{{ errorMessage }}</mat-error>
+
+    <h4 *ngIf = "booking">Foglalás adatai</h4>
+    <mat-nav-list *ngIf = "booking">
+        <p><strong>Id:</strong> {{ booking.id }}</p>
+        <p><strong>Név:</strong> {{ booking.name }}</p>
+        <p><strong>Email-cím:</strong> {{ booking.email }}</p>
+        <p><strong>Telefonszám:</strong> {{ booking.phone }}</p>
+        <p><strong>Vetítés ideje:</strong> {{ booking.screening.screening_time }}</p>
+        <p><strong>Terem:</strong> {{ booking.screening.room.name }}</p>
+        <p><strong>Választott helyek:</strong></p>
+        <div class="seats" *ngFor="let i of seats" mat-list-item>
+            <p>{{ i.number }}</p>
+        </div>
+    </mat-nav-list>
+
+    <br>
+    <div *ngIf="booking">
+        <a mat-flat-button color="primary" (click)="deleteBooking()">Foglalás törlése</a>
+    </div>
+    </form>
+</div>

@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Vetítések</h1>
+
+  <p style="font-size: small;font-style: italic;text-align: center;"
+    *ngIf="screenings.length === 0">Sajnáljuk, ehhez a filmhez nem tartozik vetítés egyelőre!</p>
+  <br>
+  <div style="text-align: center;">
+    <a *ngIf="screenings.length === 0" mat-flat-button color="primary" [routerLink]="['/movies']">
+      Vissza a filmekhez</a>
+  </div>
+
+  <mat-nav-list>
+      <a *ngFor="let screening of screenings" mat-list-item
+        [routerLink]="['/booking', screening.id]"
+      >
+        <i class="material-icons">
+          movie
+        </i>
+        <h3 matLine>{{ screening.movie.title }}</h3>
+        <p matLine>{{ screening.screening_time }}</p>
+        <p matLine>{{ screening.room.name }}</p>
+      </a>
+  </mat-nav-list>
+</div>

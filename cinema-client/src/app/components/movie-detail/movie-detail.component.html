@@ -1,0 +1,27 @@
+<div class="container">
+  <h1 *ngIf="movie">{{ movie.title }}</h1>
+
+  <dl *ngIf="movie">
+    <dt>Cím</dt>
+    <dd>{{ movie.title }}</dd>
+    <dt>Szereplők</dt>
+    <dd>{{ movie.actors }}</dd>
+    <dt>Leírás</dt>
+    <dd>{{ movie.description }}</dd>
+    <dt>Korhatár</dt>
+    <dd>{{ movie.age_limit }}</dd>
+    <dt>Műfaj</dt>
+    <dd>{{ movie.genre}}</dd>
+    <dt>Játékidő</dt>
+    <dd>{{ movie.playtime }}</dd>
+    <dt>Időpont</dt>
+    <dd>{{ movie.premier }}</dd>
+  </dl>
+
+  <div id="buttons">
+    <a mat-flat-button color="primary" [routerLink]="['/movies']">Vissza</a>
+    <a *ngIf="movie && authService.isLoggedIn" mat-flat-button color="primary" 
+      [routerLink]="['/movies', movie.id, 'edit']">Szerkesztés</a>
+    <a *ngIf="movie" mat-flat-button color="primary" [routerLink]="['/screenings', movie.id]">Helyfoglalás</a>
+  </div>
+</div>

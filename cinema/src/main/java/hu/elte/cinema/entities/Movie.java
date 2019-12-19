@@ -32,7 +32,7 @@ public class Movie extends BaseEntity {
     private String title;
     
     @Column(nullable = false)
-    private LocalDateTime premier;
+    private String premier;
     
     @Column(nullable = false)
     private Integer playtime;
