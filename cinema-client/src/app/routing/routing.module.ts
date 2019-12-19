@@ -2,16 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import { MainPageComponent } from "../main-page/main-page.component";
-import { MovieListComponent } from "../movie-list/movie-list.component";
-import { MovieDetailComponent } from "../movie-detail/movie-detail.component";
-import { MovieEditComponent } from "../movie-edit/movie-edit.component";
-import { ScreeningComponent } from '../screening/screening.component';
-import { BookingComponent } from '../booking/booking.component';
-import { SuccessComponent } from '../success/success.component';
-import { BookingPrivateComponent } from '../booking-private/booking-private.component';
+import { MainPageComponent } from "../components/main-page/main-page.component";
+import { MovieListComponent } from "../components/movie-list/movie-list.component";
+import { MovieDetailComponent } from "../components/movie-detail/movie-detail.component";
+import { MovieEditComponent } from "../components/movie-edit/movie-edit.component";
+import { ScreeningComponent } from '../components/screening/screening.component';
+import { BookingComponent } from '../components/booking/booking.component';
+import { SuccessComponent } from '../components/success/success.component';
+import { BookingPrivateComponent } from '../components/booking-private/booking-private.component';
 import { AuthGuard } from '../auth.guard';
-import { LoginComponent } from '../login/login.component';
+import { LoginComponent } from '../components/login/login.component';
 
 const routes: Routes = [
   {

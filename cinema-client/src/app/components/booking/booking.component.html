@@ -1,0 +1,61 @@
+<div class="container">
+  <h1>Jegyfoglalás</h1>
+  <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput placeholder="Név" formControlName="name" required>
+      <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.required">
+        Név megadása kötelező!
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="E-mail cím" formControlName="email" 
+        required
+        pattern="[A-Za-z0-9.aáeéiíoóöőuúüűAÁEÉIÍOÓÖŐUÚÜŰ]*[@][A-Za-z0-9.aáeéiíoóöőuúüűAÁEÉIÍOÓÖŐUÚÜŰ]*"
+      >
+      <mat-error *ngIf="email.invalid && (email.dirty || email.touched) && email.errors.required">
+        E-mail cím megadása kötelező!
+      </mat-error>
+      <mat-error *ngIf="email.invalid && (email.dirty || email.touched) && email.errors.pattern">
+        Az e-mail címnek tartalmaznia kell @-t!
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Telefonszám" formControlName="phone" 
+          required
+          pattern="[+0-9]*"
+        >
+        <mat-error *ngIf="phone.invalid && (phone.dirty || phone.touched) && phone.errors.required">
+          Telefonszám megadása kötelező!
+        </mat-error>
+        <mat-error *ngIf="phone.invalid && (phone.dirty || phone.touched) && phone.errors.pattern">
+          Telefonszám csak számokat tartalmazhat!
+        </mat-error>
+      </mat-form-field>
+    
+    <br><br>
+    <h4>Szabad székek:</h4>
+    <p style="font-size: small; font-style: italic;">Válaszd ki a székeket (kattints a számokra)!</p>
+    <mat-nav-list>
+        <div class="seats" *ngFor="let seat of availableSeats" (click)="selectSeat(seat)" mat-list-item>
+            {{ seat.number }}
+        </div>
+    </mat-nav-list>
+    <br>
+
+    <h4>Választott székek:</h4>
+    <p style="font-size: small; font-style: italic;">Kiválasztott szék törléséhez kattints a számokra!</p>
+    <mat-nav-list>
+        <div class="seats" *ngFor="let seat of selectedSeats" (click)="deleteSeat(seat)" mat-list-item>
+            <p matLine>{{ seat.number }}</p>
+        </div>
+    </mat-nav-list>
+
+    <button mat-flat-button color="primary"
+      type="submit"
+      [disabled]="selectedSeats.length === 0 || bookingForm.invalid"
+    >Foglalás elküldése</button>
+  </form>
+</div>
+  

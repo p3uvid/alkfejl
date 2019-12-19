@@ -10,6 +10,7 @@ import hu.elte.cinema.entities.Movie;
 import hu.elte.cinema.entities.Room;
 import hu.elte.cinema.entities.Screening;
 import hu.elte.cinema.entities.Seat;
+import hu.elte.cinema.entities.Status;
 import hu.elte.cinema.repositories.BookingRepository;
 import hu.elte.cinema.repositories.MovieRepository;
 import hu.elte.cinema.repositories.RoomRepository;
@@ -116,6 +117,7 @@ public class BookingController {
         List<Seat> seats = booking.get().getSeats();
         seats.forEach((i) -> {
             i.setBooking(null); //székeknél a booking_id-t nullra állítjuk
+            i.setStatus(Status.FREE);
         });
         bookingRepository.delete(booking.get());
         return ResponseEntity.ok().build();

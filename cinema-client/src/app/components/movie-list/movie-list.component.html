@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Filmek</h1>
+  <mat-nav-list>
+      <a *ngFor="let movie of movies" mat-list-item
+          [routerLink]="['/movies', movie.id]"
+      >
+        <i class="material-icons">
+          local_movies
+        </i>
+        <h3 matLine>{{ movie.title }}</h3>
+        <p matLine>{{ movie.description }}</p>
+      </a>
+  </mat-nav-list>
+</div>

@@ -1,0 +1,33 @@
+.mat-list-base, .mat-list-item {
+    color: black;
+    width: 80%;
+    margin: auto;
+}
+
+.container {
+    width: 80%;
+    padding: 2%;
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    border: 1px solid #c2185b;
+    background: #ffb6c152;
+}
+
+h1 {
+    text-align: center;
+}
+
+dl {
+    margin: auto;
+    text-align: center;
+}
+
+#buttons {
+    margin: auto;
+    width: max-content;
+}
+
+.mat-flat-buttons, .mat-button-base, .mat-primary {
+    margin: 5px;
+}

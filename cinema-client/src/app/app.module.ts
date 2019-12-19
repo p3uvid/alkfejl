@@ -18,20 +18,20 @@ import {
 import { RoutingModule } from './routing/routing.module';
 
 import { AppComponent } from './app.component';
-import { MovieListComponent } from './movie-list/movie-list.component';
-import { MainPageComponent } from './main-page/main-page.component';
+import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MovieDetailComponent } from './movie-detail/movie-detail.component';
-import { ScreeningComponent } from './screening/screening.component';
-import { MovieEditComponent } from './movie-edit/movie-edit.component';
-import { BookingComponent } from './booking/booking.component';
+import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
+import { ScreeningComponent } from './components/screening/screening.component';
+import { MovieEditComponent } from './components/movie-edit/movie-edit.component';
+import { BookingComponent } from './components/booking/booking.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SuccessComponent } from './success/success.component';
+import { SuccessComponent } from './components/success/success.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { BookingPrivateComponent } from './booking-private/booking-private.component';
-import { LoginComponent } from './login/login.component';
+import { BookingPrivateComponent } from './components/booking-private/booking-private.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({

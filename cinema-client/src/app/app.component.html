@@ -1,18 +1,16 @@
 <mat-toolbar color="primary">
   <button mat-button routerLink="/">
     <mat-icon>home</mat-icon>
-    Mozi app
+    Mi Mozink
   </button>
   <button mat-button routerLink="/movies">Filmek</button>
   <div *ngIf="authService.isLoggedIn">
     <button mat-button routerLink="/movies/add">Új film hozzáadása</button>
     <button mat-button routerLink="/booking/private">Jegyfoglalások kezelése</button>
-    <span>Hello!</span>
-    <button mat-button (click)="logout()">Logout</button>
+    <button style="position: absolute;right: 0;" mat-button (click)="logout()">Kijelentkezés</button>
   </div>
-  <div *ngIf="!authService.isLoggedIn">
-    <button mat-button routerLink="/login">Login</button>
-  </div>
+  <button *ngIf="!authService.isLoggedIn" style="position: absolute;right: 0;" mat-button routerLink="/login">
+    Bejelentkezés</button>
 </mat-toolbar>
 
 <router-outlet></router-outlet>

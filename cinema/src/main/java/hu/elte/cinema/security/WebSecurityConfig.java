@@ -88,7 +88,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
             .csrf().disable()
             .authorizeRequests()
-                .antMatchers(HttpMethod.GET, "/booking/**").authenticated()  // important!
+                .antMatchers(HttpMethod.GET, "/booking/**").permitAll()// important! //authenticated
                 .and()
             .httpBasic()
                 .and()

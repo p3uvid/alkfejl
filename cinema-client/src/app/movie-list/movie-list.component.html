@@ -1,8 +1,0 @@
-<mat-nav-list>
-    <a *ngFor="let movie of movies" mat-list-item
-        [routerLink]="['/movies', movie.id]"
-    >
-      <h3 matLine>{{ movie.title }}</h3>
-      <p matLine>{{ movie.description }}</p>
-    </a>
-</mat-nav-list>
