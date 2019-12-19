@@ -5,9 +5,9 @@
 	- Film kiválasztása után adatok megtekintése
 	- Film kiválasztása után jegyfoglalás -> név, email, telefon megadása (form) -> helyválasztás
 - Alkalmazott:
-  -	Bejelentkezés után megjelenik az új film meghirdetésének lehetősége (film adatainak megadása)
-  -	Új előadás hozzáadása: terem kiválasztása, időpont megadása
-  -	Jegyeladás: Új/lefoglalt jegy eladása -> Film és előadás kiválasztása -> foglalás adatainak megtekintése
+  -	Bejelentkezés után megjelenik az új film meghirdetésének lehetősége (film adatainak megadása) + film adatainak módosítása
+  -	Jegyeladás: Lefoglalt jegy eladása -> foglalás adatainak megtekintése -> majd foglalás törlése
+  -	TODO: Új előadás hozzáadása: terem kiválasztása, időpont megadása
 
 ## Nem funkcionális követelmények:
 -	Felhasználóbarát, ergonomikus elrendezés és kinézet.
