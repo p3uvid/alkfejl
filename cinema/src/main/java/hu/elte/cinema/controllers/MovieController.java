@@ -62,7 +62,7 @@ public class MovieController {
         }
         return ResponseEntity.notFound().build();
     }
-    
+ 
     @DeleteMapping("/{id}")
     public ResponseEntity<Movie> delete(@PathVariable Long id) {
         Optional<Movie> movie = movieRepository.findById(id);
