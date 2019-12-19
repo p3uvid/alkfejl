@@ -68,7 +68,7 @@ DELETE /screening/{id} -> előadás törlése
 Az alkalmazott bejelentkezés után képes az összes előadás listázására, illetve új előadás hozzáadására is:    
 ![alt text](https://github.com/p3uvid/alkfejl/blob/master/sequence.PNG) 
 
-#Felhasználói dokumentáció
+# Felhasználói dokumentáció
 - Szerver: localhost:8080
   - build and run (netbeans)
 - Kliens: localhost:4200
